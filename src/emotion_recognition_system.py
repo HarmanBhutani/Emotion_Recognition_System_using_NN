@@ -1,8 +1,10 @@
 import cv2
 
-capture = cv2.VideoCapture("C:\\Users\Jugraj Singh\Downloads\Video\Stay This Way - (Assassin's Creed Official Music Video ) - YouTube.MKV")
+from constants import INPUT_FILE, CLASSIFIER_PATH
 
-classifier = cv2.CascadeClassifier("classifiers/haarcascade_frontalface_default.xml")
+capture = cv2.VideoCapture(INPUT_FILE)
+
+classifier = cv2.CascadeClassifier(CLASSIFIER_PATH)
 
 if capture.isOpened():
     ret, frames = capture.read()
@@ -17,7 +19,6 @@ while ret:
     gray = cv2.cvtColor(frames, cv2.COLOR_BGR2GRAY)
 
     faces = classifier.detectMultiScale(gray, 1.1, 1)
-    #print(faces.size)
     for (x, y, w, h) in faces:
         cv2.rectangle(frames, (x, y), (x + w, y + h), (255, 255, 0), 1)
 
