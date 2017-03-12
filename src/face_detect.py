@@ -22,7 +22,7 @@ while ret:
     for (x, y, w, h) in faces:
         cv2.rectangle(frames, (x, y), (x + w, y + h), (255, 255, 0), 1)
 
-        # Display frames in a window
+    # Display frames in a window
     frames = cv2.resize(frames, (960, 540))
     cv2.imshow('video', frames)
 
