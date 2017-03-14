@@ -62,7 +62,7 @@ def data_to_image(data):
     return data_image
 
 
-dataSet = pd.read_csv(DATA_SET_PATH)
+dataSet = pd.read_csv(DATA_SET_FILE)
 
 training_labels = []
 training_image = []
