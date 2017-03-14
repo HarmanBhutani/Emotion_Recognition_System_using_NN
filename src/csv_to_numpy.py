@@ -19,11 +19,8 @@ def format_image(image):
     ((150 // 2) - (SIZE_FACE // 2)):((150 // 2) + (SIZE_FACE // 2))] = image
     image = gray_border
 
-    faces = classifier.detectMultiScale(
-        image,
-        scaleFactor=1.3,
-        minNeighbors=5
-    )
+    faces = classifier.detectMultiScale(image, scaleFactor=1.3, minNeighbors=5
+                                        )
     # None is we don't found an image
     if not len(faces) > 0:
         # print "No hay caras"
@@ -56,16 +53,6 @@ def flip_image(image):
     return cv2.flip(image, 1)
 
 
-dataSet = pd.read_csv(DATA_SET_PATH)
-
-training_labels = []
-training_image = []
-test_labels = []
-test_image = []
-index = 1
-total = dataSet.shape[0]
-
-
 def data_to_image(data):
     # print data
     data_image = np.fromstring(str(data), dtype=np.uint8, sep=' ').reshape((SIZE_FACE, SIZE_FACE))
@@ -74,6 +61,15 @@ def data_to_image(data):
     data_image = format_image(data_image)
     return data_image
 
+
+dataSet = pd.read_csv(DATA_SET_PATH)
+
+training_labels = []
+training_image = []
+test_labels = []
+test_image = []
+index = 1
+total = dataSet.shape[0]
 
 for index, row in dataSet.iterrows():
     usage = row['Usage']
@@ -96,3 +92,9 @@ for index, row in dataSet.iterrows():
         print("Error")
     index += 1
     print("Progress: {}/{} {:.2f}%".format(index, total, index * 100.0 / total))
+
+print("Total: " + str(len(training_image) + len(test_image)))
+np.save(TRAINING_SET, training_image)
+np.save(TRAINING_LABELS, training_labels)
+np.save(TEST_SET, test_image)
+np.save(TEST_LABELS, test_labels)
