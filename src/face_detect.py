@@ -2,6 +2,27 @@ import cv2
 
 from constants import INPUT_FILE, CLASSIFIER_PATH
 
+
+def crop_face(image, rescale_factor=2):
+    cascade = cv2.CascadeClassifier(CLASSIFIER_PATH)
+    imageScaled = cv2.resize(image, (image.shape[0] / rescale_factor,
+                                     image.shape[1] / rescale_factor))
+
+    # The image might already be equalized, so no need for that here
+    gray = cv2.equalizeHist(imageScaled)
+    rects = cascade.detectMultiScale(gray, 1.1, 3)
+
+    # We need to find exactly one face in the picture
+    # print("len(rects)")
+    print(len(rects))
+    if len(rects) is not 1:
+        return None
+
+    x, y, w, h = map(lambda x: x * rescale_factor, rects[0])
+    face = image[y:y + h, x:x + w]
+    return face
+
+
 capture = cv2.VideoCapture(INPUT_FILE)
 
 classifier = cv2.CascadeClassifier(CLASSIFIER_PATH)
