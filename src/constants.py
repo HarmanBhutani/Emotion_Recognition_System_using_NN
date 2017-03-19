@@ -13,3 +13,5 @@ TRAINING_LABELS = DATA_SET_DIR + "/data_labels_fer2013.npy"
 
 TEST_SET = DATA_SET_DIR + "/test_set_fer2013.npy"
 TEST_LABELS = DATA_SET_DIR + "/test_labels_fer2013.npy"
+
+SAVE_MODEL_FILENAME = "ERS"

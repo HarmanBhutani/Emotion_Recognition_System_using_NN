@@ -1,3 +1,6 @@
+import os
+from os.path import join
+
 import tflearn
 from tflearn.layers.estimator import regression
 from tflearn.layers.core import input_data, dropout, fully_connected
@@ -27,3 +30,19 @@ class EmotionRecognition:
 
         self.model = tflearn.DNN(self.network, checkpoint_path=DATA_SET_DIR + '/emotion_recognition', max_checkpoints=1,
                                  tensorboard_verbose=2)
+        self.load_model()
+
+    def load_saved_dataset(self):
+        self.dataset.load_from_save()
+        print('[+] Dataset found and loaded')
+
+    def load_model(self):
+        files = []
+        for x in os.listdir(DATA_SET_DIR):
+            files.append(os.path.splitext(x)[0])
+        print(files)
+        if files.__contains__(SAVE_MODEL_FILENAME):
+            self.model.load(join(DATA_SET_DIR, SAVE_MODEL_FILENAME))
+            print('[+] Model loaded from ' + SAVE_MODEL_FILENAME)
+        else:
+            print('[+] Model Not loaded. File named' + SAVE_MODEL_FILENAME + ' Not Exist')
