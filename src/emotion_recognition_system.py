@@ -46,3 +46,22 @@ class EmotionRecognition:
             print('[+] Model loaded from ' + SAVE_MODEL_FILENAME)
         else:
             print('[+] Model Not loaded. File named' + SAVE_MODEL_FILENAME + ' Not Exist')
+
+    def start_training(self):
+        self.load_saved_dataset()
+        self.build_network()
+        if self.dataset is None:
+            self.load_saved_dataset()
+        # Training
+        print('[+] Training network')
+        # self.model.fit(self.dataset.images, self.dataset.labels,
+        #                validation_set=(self.dataset.images_test, self.dataset._labels_test), n_epoch=100,
+        #                batch_size=50, shuffle=True, show_metric=True, snapshot_step=200, snapshot_epoch=True,
+        #                run_id='emotion_recognition'
+        #                )
+
+        self.model.fit(self.dataset.images, self.dataset.labels,
+                       validation_set=(self.dataset.images_test, self.dataset._labels_test), n_epoch=2, batch_size=50,
+                       shuffle=True, show_metric=True, snapshot_step=200, snapshot_epoch=True,
+                       run_id='emotion_recognition'
+                       )
