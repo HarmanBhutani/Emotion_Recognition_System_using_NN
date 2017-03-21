@@ -7,6 +7,7 @@ EMOTIONS = ['angry', 'disgusted', 'fearful', 'happy', 'sad', 'surprised', 'neutr
 SIZE_FACE = 48
 
 DATA_SET_DIR = "dataset"
+SAVED_DATA_SET = "data_set_fer2013"
 DATA_SET_FILE = DATA_SET_DIR + "/fer2013.csv"
 TRAINING_SET = DATA_SET_DIR + "/data_set_fer2013.npy"
 TRAINING_LABELS = DATA_SET_DIR + "/data_labels_fer2013.npy"
