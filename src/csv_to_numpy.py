@@ -19,8 +19,7 @@ def format_image(image):
     ((150 // 2) - (SIZE_FACE // 2)):((150 // 2) + (SIZE_FACE // 2))] = image
     image = gray_border
 
-    faces = classifier.detectMultiScale(image, scaleFactor=1.3, minNeighbors=5
-                                        )
+    faces = classifier.detectMultiScale(image, scaleFactor=1.3, minNeighbors=5)
     # None is we don't found an image
     if not len(faces) > 0:
         # print "No hay caras"

@@ -1,11 +1,11 @@
 import os
+import sys
 from os.path import join
 
-import sys
 import tflearn
-from tflearn.layers.estimator import regression
-from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.conv import conv_2d, max_pool_2d
+from tflearn.layers.core import input_data, dropout, fully_connected
+from tflearn.layers.estimator import regression
 
 from constants import *
 from dataset_loader import DatasetLoader
@@ -43,7 +43,6 @@ class EmotionRecognition:
             print("Training Set not found \nCreate New Now?")
             choice = input("Enter Your Choice (Y/N)")
             if (choice == 'Y') | (choice == 'y'):
-                import csv_to_numpy
                 self.start_training()
             else:
                 exit(0)
@@ -106,6 +105,6 @@ if __name__ == "__main__":
         network.start_training()
         network.save_model()
     elif sys.argv[1] == 'run':
-        import poc
+        import run_ERS
     else:
         show_usage()
