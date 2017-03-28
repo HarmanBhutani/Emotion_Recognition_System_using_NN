@@ -43,6 +43,7 @@ class EmotionRecognition:
             print("Training Set not found \nCreate New Now?")
             choice = input("Enter Your Choice (Y/N)")
             if (choice == 'Y') | (choice == 'y'):
+                import csv_to_numpy
                 self.start_training()
             else:
                 exit(0)
@@ -90,9 +91,9 @@ class EmotionRecognition:
 
 def show_usage():
     # I din't want to have more dependecies
-    print('[!] Usage: python emotion_recognition.py')
-    print('\t emotion_recognition.py train \t Trains and saves model with saved dataset')
-    print('\t emotion_recognition.py run \t Launch the proof of concept')
+    print('[!] Usage: python emotion_recognition_system.py')
+    print('\t emotion_recognition_system.py train \t Trains and saves model with saved dataset')
+    print('\t emotion_recognition_system.py run \t Launch the Demonstration of concept')
 
 
 if __name__ == "__main__":

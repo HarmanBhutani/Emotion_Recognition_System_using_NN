@@ -51,14 +51,14 @@ for index, emotion in enumerate(EMOTIONS):
 while True:
     # Capture frame-by-frame
     ret, frame = video_capture.read()
-    # faces = cascade_classifier.detectMultiScale(frame, 1.1, 1)
+    # faces = classifier.detectMultiScale(frame, 1.1, 1)
 
     # Predict result with network
     result = network.predict(format_image(frame))
 
     # Draw face in frame
-    # for (x,y,w,h) in faces:
-    #   cv2.rectangle(frame, (x,y), (x+w,y+h), (255,0,0), 2)
+    # for (x, y, w, h) in faces:
+    #     cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
     # Write results in frame
     if result is not None:
