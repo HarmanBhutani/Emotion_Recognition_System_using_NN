@@ -1,0 +1,47 @@
+\begin{center}
+	{\Huge Software Requirement Analysis}
+\end{center}
+\setcounter{section}{0}
+
+\section{Modules:}
+The whole project can be categorized into 3 modules
+\begin{itemize}
+	\item Video
+	\item Audio
+	\item Text
+\end{itemize}
+The aim of this project is to analysis these categories and give us the output of emotion which is being recognized through the analysis
+
+\begin{enumerate}
+	\item Video
+	
+	The first step towards recognizing the emotion in a video is Image extraction which is done through taking snapshots of the video going on at a particular time interval for example after each second a snapshot is taken and any change in behavior is noted.
+	
+	Next step is to do Image analysis. The snapshots which are taken in the first step are analyzed according to the face recognition classifier. It is done by comparing selected facial features from the image and from a face database or a training set given to the laptop.
+	
+	It is typically used in security systems and can be compared to other biometrics such as fingerprint or eye iris recognition systems
+	
+	The face recognition algorithms identify facial features by extracting landmarks or feature from an image of the subject's face. For example, an algorithm may analyze the relative position, size, and/or shape of the eyes, nose, cheekbones, and jaw. These features are then used to search for other images with matching features. Other algorithms normalize a gallery of face images and then compress the face data, only saving the data in the image that is useful for face recognition. A probe image is then compared with the face data. One of the earliest successful systems is based on template matching technique applied to a set of salient facial features, providing a sort of compressed face representation.
+	
+	Other recognition algorithms include principal component analysis using eigenfaces, linear discriminant analysis, elastic bunch graph matching using the Fisherface algorithm, the hidden Markov model, the multilinear subspace learning using tensor representation, and the neuronal motivated dynamic link matching.
+	
+	Next and the final step is Emotional Analysis
+	
+	Based on image analysis we do emotional analysis of the video. We can come to know about any type of scene in the video whether it is happy or sad. Or any changes in the mood of the person in video.
+	
+	\item Audio
+	
+	Audio is anything that can be heard and ability of hearing any sound is based upon two factors: its frequency or pitch
+	
+	An audio frequency  is characterized as a periodic vibration whose frequency is audible to the average human. The SI unit of audio frequency is the hertz (Hz). It is the property of sound that most determines pitch. Pitch is the quality that makes it possible to judge sounds as "higher" and "lower" in the sense associated with musical melodies.
+	
+	
+	
+	According to the pitch, being high or low it is judged if the tone of the voice is aggressive or soft and we get to know about emotion behind the audio clip. The audio to be judged is extracted to do analysis of the frequency. Frequency measurement is done to analyze the behavior or emotion.
+	
+	\item Text
+	
+	We are using Naive Bayes theorem for classification of text data into word bag and naive Bayes classifiers are a family of simple probabilistic classifiers based on applying Bayes' theorem with strong (naive) independence assumptions between the features.
+	
+	Naive Bayes classifiers are highly scalable, requiring a number of parameters linear in the number of variables (features/predictors) in a learning problem Naive Bayes is a simple technique for constructing classifiers: models that assign class labels to problem instances, represented as vectors of feature values, where the class labels are drawn from some finite set. It is not a single algorithm for training such classifiers, but a family of algorithms based on a common principle: all naive Bayes classifiers assume that the value of a particular feature is independent of the value of any other feature, given the class variable. 
+\end{enumerate}
