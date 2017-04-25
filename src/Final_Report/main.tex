@@ -1,11 +1,13 @@
 \documentclass[12pt,a4paper]{report}
-\usepackage[left=3.5cm, top=2.5cm, right=1.25cm, bottom=1.5cm,footskip=0.25cm]{geometry}
+\usepackage[left=3.5cm, top=2.5cm, right=1.25cm, bottom=1.25cm,footskip=0.75cm]{geometry}
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{listings}
 \onehalfspacing
 %\usepackage{times}
-\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter:}{1ex}{\Huge}
+\titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter:}{1ex}{\Huge}
 
 \begin{document}
 	\input{title_page/title.tex}
@@ -31,4 +33,12 @@
 	
 	\input{chapters/Requirement_Analysis_and_System_Specification.tex}
 	\newpage
+	
+	\input{chapters/System_Design.tex}
+	\newpage
+	
+	\input{chapters/Implementation_Testing_and_Maintenance.tex}
+	\newpage
+	
+	\input{chapters/Conclusion_and_Future_Scope.tex}
 \end{document}

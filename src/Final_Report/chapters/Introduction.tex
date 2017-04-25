@@ -50,6 +50,8 @@ The task of emotion recognition is particularly difficult for two reasons:
 	\item There does not exist a large database of training images and
 	\item Classifying emotion can be difficult depending on whether the input image is static or a transition frame into a facial expression
 \end{enumerate}
+One problem always presents while designing a practical emotion recognition system is the need for the output to be updated in real time.
+
 The latter issue is particularly difficult for real-time detection where facial expressions vary dynamically.
 
 Traditional approaches to emotion recognition were based on hand-engineered features. With the availability of big datasets, deep learning has emerged as a general approach to machine learning yielding state-of-the-art results in many computer vision and natural language processing tasks. The basic principle of deep learning is to learn hierarchical representations of input data such that the learned representations improve classification performance. 
@@ -62,7 +64,7 @@ One possible application for this lies in the area of surveillance and behaviour
 
 The task is to predict one of seven emotion labels: angry, disgust, fear, happy, sad, surprise and neutral.
 
-The dataset I used for training the model is from a Kaggle Facial Expression Recognition Challenge a few years back (FER2013). It comprises a total of 35887 pre-cropped, 48-by-48-pixel grayscale images of faces each labelled with one of the 7 emotion classes: anger, disgust, fear, happiness, sadness, surprise, and neutral.
+The dataset we used for training the model is from a Kaggle Facial Expression Recognition Challenge a few years back (FER2013). It comprises a total of 35887 pre-cropped, 48-by-48-pixel grayscale images of faces each labelled with one of the 7 emotion classes: anger, disgust, fear, happiness, sadness, surprise, and neutral.
 
 \begin{figure}[h]
 	\centering\includegraphics{images/fer2013.png}
@@ -73,6 +75,8 @@ We also applied a Haar-Cascade filter provided by Open-CV to crop the input imag
 
 \section{Identification of need}
 A key feature in human interaction is the universality of facial expressions and body language.
+
+Our goal of emotion detection system is to develop a system that has ability to identify faces under different viewing angles in real time using video in an uncontrolled environment. The primary strength of this type of human–computer interface is the seamless integration of the computer display with objects in the real world.
 
 \begin{figure}[h]
 	\centering\includegraphics{images/mrbean.png}
