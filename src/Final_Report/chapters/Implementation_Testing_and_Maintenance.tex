@@ -186,6 +186,37 @@ are going to merge it in or share it with others.
 
 As with most other distributed revision control systems, and unlike most client–server systems, every Git working directory is a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server. Like the Linux kernel, Git is free and open source software distributed under the terms of the GNU General Public License version 2 to handle everything from small to very large projects with speed and efficiency.
 
+\section{Coding Standards}
+Python uses indentation to give you a visual indication of the structure of your code. Additionally we have an interactive interpreter which provides a default representation for many objects and data structures. Consistency of style, and using the interpreters representation for objects, will make it easier for you to parse and absorb the meaning of the code.\\
+Following are some of the python coding standards adopted during the project:
+\begin{itemize}
+	\item Python uses 4 spaces per indentation level.
+	\item Spaces are the preferred indentation method.
+	\item Limit all lines to a maximum of 79 characters.
+	\item One statement per line.\\
+	While some compound statements such as list comprehensions are allowed and appreciated for their brevity and their expressiveness, it is bad practice to have two disjointed statements on the same line of code.
+	\item Continuation lines should align wrapped elements either vertically using Python's implicit line joining inside parentheses, brackets and braces, or using a hanging indent.
+	\item Imports should usually be on separate lines.
+	\begin{lstlisting}
+Ok:
+import os
+import sys
+
+Not Ok:
+import sys, os
+	\end{lstlisting}
+	\item Imports should be grouped in the following order:
+	
+	\begin{enumerate}
+		\item standard library imports
+		\item related third party imports
+		\item local application/library specific imports
+	\end{enumerate}
+	We should put a blank line between each group of imports.
+\end{itemize}
+
+\section{Project Scheduling}
+
 \section{Testing}
 The networks are programmed with use of the TFLearn library on top of TensorFlow, running on Python. This environment lowers the complexity of the code, since only the neuron layers have to be created, instead of every neuron. The program also provides real-time feedback on training progress and accuracy, and makes it easy to save and reuse the model after training.
 \begin{enumerate}[(A)]
@@ -233,7 +264,7 @@ As can be seen from figure 4.7, the accuracy seems to still increase in the last
 \end{figure}
 In an attempt to improve the final model even more, the network will be trained on a larger set than the one described previously. Instead of 9000 pictures, training will be done with 20000 pictures from the FERC2013 dataset. The ratios of the emotions present in this set are given in figure 4.8. Newly composed validation (2000 images) and test sets (1000 images) from the FERC-2013 dataset are used as well, together with the well-balanced RaFD test set from the previous experiment.
 
-The accuracy rates of the final model are given in table 2. On all validation and test sets the accuracy was higher than during previous runs, underlining that more data and longer training can improve the performance of a network
+The accuracy rates of the final model are given in table 4.2. On all validation and test sets the accuracy was higher than during previous runs, underlining that more data and longer training can improve the performance of a network
 
 \begin{table}[h]
 	\centering
@@ -254,3 +285,5 @@ The accuracy rates of the final model are given in table 2. On all validation an
 		\hline
 	\end{tabular}
 \end{table}
+
+ Given that the state-of-the art networks from previous research obtained about 67\% on test sets, and keeping in mind our limited resources, the results are in fact pretty good. Notable is the accuracy on the RaFD test set, which contains completely different pictures than the training data. This illustrates the powerful generalizing capabilities of this final model.

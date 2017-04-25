@@ -96,7 +96,7 @@ We therefore will train the network for 100 epochs in the final run, to make sur
 
 Live emotion recognition through video is one of the most important key-points in human-machine interaction. To show the capabilities of the obtained network, an application is developed that can directly process web-cam footage through the final model.
 
-With use of the aforementioned OpenCV face recognition program [15], the biggest appearing face from real-time video is tracked, extracted, and scaled to usable 48x48 input. This data is then fed to the input of the neural network model, which in its turn returns the values of the output layer. These values represent the likelihood that the each emotion is depicted by the user. The output with the highest value is assumed to be the current emotion of the user, and is depicted by an emotion on the left of the screen
+With use of the aforementioned OpenCV face recognition program, the biggest appearing face from real-time video is tracked, extracted, and scaled to usable 48x48 input. This data is then fed to the input of the neural network model, which in its turn returns the values of the output layer. These values represent the likelihood that the each emotion is depicted by the user. The output with the highest value is assumed to be the current emotion of the user, and is depicted by an emotion on the left of the screen
 
 Although it is hard to objectively assess, the live application shows promising performance. Though, it encounters problems when shadows are present on the face of the subject. All emotions are easily recognized when acted by the user, and when pointing the camera on the television, most emotions in the wild can be classified This once again emphasizes the power of using neural network based models for future applications in emotion recognition.
 
@@ -110,3 +110,7 @@ Once the faces have been registered, the images are resized to 48x48 pixels for 
 	\centering\includegraphics[scale=1.5]{images/dataset_design.png}
 	\caption{Dataset Design Architecture}
 \end{figure}
+
+\section{Methodology}
+\textbf{{\Large Feature Extraction}}\\
+Different emotional states can be recognized using certain speech features which can be either prosody features or quality features. Some Prosody features which can be extracted directly; includes pitch, intensity and energy are the most widely used features in the emotion recognition domain. 

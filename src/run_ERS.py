@@ -41,7 +41,7 @@ def format_image(image):
 network = EmotionRecognition()
 network.build_network()
 
-video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture("C:\\Users\Jugraj Singh\Downloads\Video\(7) TRAILER - Kingsman- The Golden Circle - YouTube.MKV")
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 feelings_faces = []

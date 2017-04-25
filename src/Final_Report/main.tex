@@ -7,7 +7,8 @@
 \usepackage{listings}
 \onehalfspacing
 %\usepackage{times}
-\titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter:}{1ex}{\Huge}
+%\titleformat{\chapter}[block]{\normalfont\Large}{\chaptertitlename\ \thechapter:}{1ex}{\rule{\textwidth}{1pt}\vspace{1ex}\centering} % before-code[\vspace{-0.5ex}%\rule{\textwidth}{0.3pt}]
+\titleformat{\chapter}[block]{\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter:}{5pt}{\Huge}
 
 \begin{document}
 	\input{title_page/title.tex}
@@ -38,6 +39,9 @@
 	\newpage
 	
 	\input{chapters/Implementation_Testing_and_Maintenance.tex}
+	\newpage
+	
+	\input{chapters/Results_and_Discussions.tex}
 	\newpage
 	
 	\input{chapters/Conclusion_and_Future_Scope.tex}
