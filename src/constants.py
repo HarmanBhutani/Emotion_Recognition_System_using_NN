@@ -9,7 +9,7 @@
 #
 #
 
-INPUT_FILE = "input.MKV"
+INPUT_FILE = "input5.MKV"
 CLASSIFIER_PATH = "classifiers/haarcascade_frontalface_default.xml"
 
 EMOTIONS = ['angry', 'disgusted', 'fearful', 'happy', 'sad', 'surprised', 'neutral']

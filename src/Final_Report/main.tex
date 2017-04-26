@@ -5,16 +5,31 @@
 \usepackage{setspace}
 \usepackage{enumerate}
 \usepackage{listings}
+\usepackage{url}
 \onehalfspacing
 %\usepackage{times}
 %\titleformat{\chapter}[block]{\normalfont\Large}{\chaptertitlename\ \thechapter:}{1ex}{\rule{\textwidth}{1pt}\vspace{1ex}\centering} % before-code[\vspace{-0.5ex}%\rule{\textwidth}{0.3pt}]
-\titleformat{\chapter}[block]{\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter:}{5pt}{\Huge}
+\titleformat{\chapter}[display]{\filleft\normalfont\Huge\bfseries}{\chaptertitlename\ \thechapter}{5pt}{\Huge}
 
+\renewcommand{\listfigurename}{\begin{tabular}{l c r}
+		\hline
+		Fig.No. & Figure Description &  Page No.\\
+		\hline
+\end{tabular}}
+\renewcommand{\listtablename}{\begin{tabular}{l c r}
+\hline
+Table No. & Table Description &  Page No.\\
+\hline
+\end{tabular}}
 \begin{document}
 	\input{title_page/title.tex}
 	\newpage
 	
 	\pagenumbering{Roman}
+	
+	\input{acknowledgement/abstract.tex}
+	\newpage
+	
 	\input{acknowledgement/acknowledgement.tex}
 	\newpage
 	
@@ -45,4 +60,7 @@
 	\newpage
 	
 	\input{chapters/Conclusion_and_Future_Scope.tex}
+	\newpage
+	
+	\input{chapters/References.tex}
 \end{document}
